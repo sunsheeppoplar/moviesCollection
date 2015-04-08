@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title><%-movie.title%></title>
+</head>
+<body>
+  <h1><%-movie.title%></h1>
+  <h2>(<%-movie.year%>)</h2>
+<ul>
+  <li><img src="<%-movie.poster%>"></li>
+  <li>rated: <%-movie.rating%> | director: <%-movie.director%></li> <br>
+</ul>
+<p> <%-movie.plot%> </p>
+  <ul>
+  <%for (var i = 0; i < movie.actors.length; i++) {%>
+    <li><%-movie.actors[i]%></li> 
+    <% }; %>
+  </ul>
+ <form action="/movie/<%= movie.id %>?_method=DELETE" method="POST">
+<input type ="submit" value="Remove this movie">
+ </form>
+
+
+</body>
+</html>
+  
